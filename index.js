@@ -21,5 +21,22 @@ const updateInDB = async () => {
 
     console.log('data has sucess fully updateInDB :', data );
 }
-// IncertInDB();
+
+const deleteInDB = async () => {
+    const ProductModel = mongoose.model('mobiles', ProductSchema);
+    const data = await ProductModel.deleteOne({Name:'iPhone 12'});
+    console.log('data has sucess fully daleteInDB :', data );
+}
+
+const findInDB = async () => {
+    const ProductModel = mongoose.model('mobiles', ProductSchema);
+    const data = await ProductModel.find();
+    console.log(data);
+}
+
+
+
+IncertInDB();
 updateInDB();
+deleteInDB();
+findInDB();
